@@ -1,0 +1,86 @@
+/* All for comments */
+
+#comments {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .20);
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#message-container {
+    padding-top: 10px;
+    width: 800px;
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#comment-pager {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 700px;
+    display: none;
+}
+
+#comment-pager .pager-prev,
+#comment-pager .pager-next {
+    width: 35px;
+    height: 35px;
+}
+
+#comment-pager .pager-prev {
+    -webkit-mask-image: url("../media/prev.svg");
+}
+
+#comment-pager .pager-next {
+    -webkit-mask-image: url("../media/next.svg");
+}
+
+.msg {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center; 
+    padding-top: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(234, 119, 153);
+}
+
+/* User Profile */
+.author-details .author-image {
+    width: 60px;
+    height: 60px;
+}
+
+.author-details .author-name {
+    text-align: center;
+}
+
+
+/* Message */
+.message-content {
+    flex: 1;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.message-content p {
+    font-size: 18px;
+    margin: 0px 0px 10px 0px;
+}
+
+.message-content .message-date {
+    font-size: 15px;
+    color: rgba(0, 0, 0, .6);
+    text-align: right;
+}
+
+.delete-icon {
+    height: 35px;
+    width: 35px;
+    -webkit-mask-image: url("../media/msgdel.svg");
+}

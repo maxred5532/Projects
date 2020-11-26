@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Webgallery | Home</title>
+    <link href="style/main.css" rel="stylesheet" type="text/css"/>
+    <link href="style/form.css" rel="stylesheet" type="text/css"/>
+    <link href="style/message.css" rel="stylesheet" type="text/css"/>
+    <script src="js/api.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/">Webgallery</a>
+    </header>
+    
+    <div id="content">
+        <!-- Logout-->
+        <div class="user-gallery-container"></div>
+        <div class="mini-event-container"></div>
+
+        <!-- Togglable box to add image to webgallery -->
+        <div class="add-image-form-container">
+            <button type="button" id="upload-toggle" class="form-toggle fade">Toggle Add-Image Form</button>
+            <form id="image-form" action="/api/image/" method="POST" enctype="multipart/form-data">
+                <div class="post-header">Add an image to the gallery</div>
+                <input type="text" id="upload-image-title" class="post-title" placeholder="Image Title" name="title" autocomplete="off" required/>
+                <input type="file" id="upload-image-url" name="file" class="post-content" required/>
+                <!--<input type="text" id="upload-image-url" class="post-content" placeholder="Image URL" name="imageContent" autocomplete="off" required/>-->
+                <button type="submit" class="post-submit">Add It!</button>
+            </form>
+        </div>
+
+        <!-- Alerts -->
+        <div class='user-alert'><div class='user-alert-message'></div></div>
+
+        <!-- The main webgallery display -->
+        <div id="image-container">
+            <!-- Image here -->
+        </div>
+    </div>
+
+    <div id="comments">
+        <!-- User comments goes here -->
+        <div id="message-container"></div>
+
+        <div id="comment-pager">
+            <div class="pager-prev icon"></div>
+            <div class="pager-next icon"></div>
+        </div>
+
+        <!-- Comment box for users to add their comments -->
+        <div class="add-comment-form-container">
+            <form id="message-form">
+                <div class="post-header">Say something about this picture!</div>
+                <textarea id="comment-content" class="post-content" placeholder="Comment" name="msgContent" required></textarea>
+                <button type="submit" class="post-submit">Post Comment</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <a href='/credits.html'>credits</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+/* General */
+#image-form, #message-form, #login-form {
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s linear;
+}
+
+#image-form {
+    /* For Javascript to change around */
+    visibility: hidden;
+    margin: 0px 15px;
+    height: 0px;
+    opacity: 0;
+}
+
+#message-form {
+    margin: 15px;
+    height: 200px;
+    display: none;
+}
+
+#login-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.post-header {
+    margin-bottom: 10px;
+}
+
+.post-author, .post-content, .post-title {
+    padding: 5px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-left: solid 4px rgba(230, 0, 65, .5);
+    margin-bottom: 5px;
+    transition: border .5s;
+}
+
+.post-author:focus, .post-content:focus, .post-title:focus {
+    border-left: solid 4px rgb(3, 207, 86);
+}
+
+
+/* Post buttons */
+.post-submit {
+    padding: 5px;
+    border: 0;
+    color: rgb(255, 255, 255);
+    background: rgb(189, 0, 54);
+    border-radius: 0px;
+    font-size: 20px;
+    transition: background .3s;
+}
+
+.post-submit:hover {
+    background: rgb(221, 22, 80);
+}
+
+
+/* For Images */
+.add-image-form-container .post-header {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.add-image-form-container .post-author,
+.add-image-form-container .post-title, .add-image-form-container .post-content {
+    color: rgb(255, 255, 255);
+    background-color: rgba(97, 97, 97, .8);
+}
+
+.add-image-form-container .post-author::placeholder,
+.add-image-form-container .post-title::placeholder,
+.add-image-form-container .post-content::placeholder {
+    color: rgb(203, 203, 203);
+}
+
+
+/* For Comments */
+.add-comment-form-container {
+    width: 800px;
+    margin: 50px auto;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 20px;
+}
+
+.add-comment-form-container .post-header {
+    font-size: 26px;
+    color: rgb(189, 0, 54);
+    font-weight: bold;
+}
+
+.add-comment-form-container .post-author, .add-comment-form-container .post-content {
+    color: rgb(42, 42, 42);
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.add-comment-form-container .post-author::placeholder,
+.add-comment-form-container .post-content::placeholder {
+    color: rgb(106, 106, 106);
+}
+
+
+/* Login and Register stuff */
+#login-form .post-author {
+    font-size: 30px;
+}
+
+#login-form .post-submit {
+    margin: 5px 10px;
+    padding: 10px 10px;
+    width: 200px;
+}

@@ -1,0 +1,281 @@
+html, body {
+    margin: auto;
+    padding: 0px;
+    margin: 0px;
+    text-align: left;
+    font-size: 14px;
+    color: rgb(0, 0, 0);    
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(255, 255, 255);
+    width: 100%;
+    min-width: 800px;
+}
+
+html {
+    background-color: rgb(43, 43, 43);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: rgb(189, 0, 54);
+    font-size: 40px;
+    padding: 10px;
+    margin: 20px 0px 20px 0px;
+}
+
+/*  Emphasis header line with modification from:
+    https://stackoverflow.com/questions/15557627/heading-with-horizontal-line-on-either-side    */
+h1:before, h1:after {
+    content: '';
+    margin: 20px;
+    overflow: hidden;
+    width: 25%;
+    height: 3px;
+    background-color: rgb(189, 0, 54);
+    position: relative;
+}
+
+header {
+    padding: 20px 0px 20px 60px;
+}
+
+header a {
+    text-decoration:none;
+    font-size: 45px;
+    color: rgb(189, 0, 54);
+    font-weight: bold;
+    transition: color .5s;
+}
+
+header a:hover {
+    color: rgb(249, 83, 131);
+}
+
+
+/* For all icons */
+.icon {
+    height: 80px;
+    width: 80px;
+    background-color: rgb(189, 0, 54);
+    transition: background-color .3s;
+    cursor: pointer;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.icon:hover {
+    background-color: rgb(249, 83, 131);
+}
+
+
+/* Content is the gallery, image, and post image */
+#content {
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    padding: 20px;
+    margin-top: -2px;
+    background-color: rgba(0, 0, 0, .15);
+    border-top: solid 2px rgb(189, 0, 54);
+    text-align:center;
+}
+
+.notice {
+    color: rgb(189, 0, 54);
+    font-size: 40px;
+    padding: 10px;
+    margin-top: 10%;
+}
+
+.mini-event-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+.logout-button, .view-my-gallery {
+    float: right;
+    width: 100px;
+    padding: 12px;
+    background: rgba(97, 0, 31, 1);
+    opacity: .7;
+    transition: all .7s;
+}
+
+.view-my-gallery {
+    width: 352px;
+    background: rgba(163, 0, 52, 1);
+}
+
+.add-image-form-container {
+    position: absolute;
+    visibility: hidden;
+    top: 40px;
+    right: 0;
+    width: 500px;
+    background-color: rgba(0, 0, 0, .7);
+    text-align: left;
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.add-image-form-container .form-toggle {
+    font-size: 26px;
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 0px;
+    color: rgb(255, 255, 255);
+    background: rgb(189, 0, 54);
+    transition: background .3s;
+}
+
+.add-image-form-container .form-toggle:hover,
+.logout-button:hover, .view-my-gallery:hover  {
+    background: rgb(221, 22, 80);
+    opacity: 1;
+}
+
+/* Alerts */
+.user-alert {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: 20px;
+}
+
+.user-alert-message {
+    position: relative;
+    left: -50%;
+    top: 70px;
+    width: 100%;
+    padding: 8px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(189, 0, 54);
+}
+
+
+.gallery {
+    width: 100%;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/*  Coloring SVG images thanks to Noah Blon from CodePen.io at:
+    https://codepen.io/noahblon/post/coloring-svgs-in-css-background-images     */
+.gallery .prev {
+    -webkit-mask-image: url("../media/prev.svg");
+}
+
+.gallery .next {
+    -webkit-mask-image: url("../media/next.svg");
+}
+
+.gallery .image {
+    max-width: 90%;
+    height: auto;
+}
+
+
+.gallery-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10% 20px 10%;
+}
+
+/*  Space character for css content from:
+    https://www.designcise.com/web/tutorial/how-to-add-space-before-or-after-an-element-using-css-pseudo-elements   */
+.gallery-info .image-author:before {
+    content: "Uploaded By:\00a0";
+}
+
+.gallery-info .image-delete, .gallery-info .image-author {
+    font-size: 20px;
+    color: rgb(189, 0, 54);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+}
+
+.gallery-info .image-delete .image-delete {
+    height: 50px;
+    width: 50px;
+    -webkit-mask-image: url("../media/delete.svg");
+}
+
+
+.gallery-list {
+    cursor: pointer;
+    padding: 20px;
+    width: 800px;
+    margin: 5px auto;
+    font-size: 25px;
+    color: rgb(189, 0, 54);
+    background-color: rgba(204, 204, 204, .5);
+    text-align: left;
+    transition: all 0.75s;
+    border-left: solid 4px rgba(189, 0, 54, .75);
+}
+
+.gallery-list:hover {
+    width: 780px;
+    background-color: rgba(189, 0, 54, .15);
+    border-left: solid 24px rgb(189, 0, 54);
+}
+
+.gallery-list-pager {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 100px auto;
+    width: 300px;
+}
+
+.gallery-list-pager .pager-prev,
+.gallery-list-pager .pager-next {
+    width: 50px;
+    height: 50px;
+}
+
+.gallery-list-pager .pager-prev {
+    -webkit-mask-image: url("../media/prev.svg");
+}
+
+.gallery-list-pager .pager-next {
+    -webkit-mask-image: url("../media/next.svg");
+}
+
+
+footer {
+    position: relative;
+    text-align: center;
+    min-width: 100%;
+    background-color: rgb(43, 43, 43);
+    z-index: 1;
+    padding: 20px 0px 20px 0px;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+
+/* For Credit Page */
+.credit-list {
+    margin: 0 auto 0 auto;
+}
+
+.bullet-list {
+    list-style-image: url("../media/star.svg");
+    text-align: left;
+}
